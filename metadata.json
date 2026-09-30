@@ -1,0 +1,6 @@
+{
+  "name": "Realtor Growth Lead Magnet",
+  "description": "Capture realtor leads with a free real estate business growth ebook.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
