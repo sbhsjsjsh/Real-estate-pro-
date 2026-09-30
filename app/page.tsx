@@ -1,6 +1,6 @@
 'use client';
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {motion, AnimatePresence} from 'motion/react';
 import {BookOpen, CheckCircle2, ArrowRight, Phone, User, Building2, Download} from 'lucide-react';
 import Image from 'next/image';
@@ -13,6 +13,18 @@ export default function LandingPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    // Automatic download trigger when lead is successfully captured
+    if (isSuccess) {
+      const link = document.createElement('a');
+      link.href = '/real-estate-growth-ebook.pdf';
+      link.download = 'Real_Estate_Growth_Guide.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, [isSuccess]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -192,7 +204,7 @@ export default function LandingPage() {
               </div>
               <h2 className="text-3xl font-bold mb-4 text-[#004d40]">Lead Captured!</h2>
               <p className="text-gray-600 mb-8 text-lg">
-                Your growth guide is ready. Click below to start your download instantly.
+                Your growth guide download has started. If it doesn't start, click the button below.
               </p>
               <div className="flex flex-col gap-4">
                 <a
@@ -200,9 +212,9 @@ export default function LandingPage() {
                   download="Real_Estate_Growth_Guide.pdf"
                   className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#004d40] text-white rounded-xl font-bold text-xl hover:bg-[#00695c] active:scale-[0.98] transition-all shadow-xl"
                 >
-                  <Download size={28} /> DOWNLOAD PDF NOW
+                  <Download size={28} /> DOWNLOAD AGAIN
                 </a>
-                <p className="text-xs text-gray-400">Download starts immediately in 1 second.</p>
+                <p className="text-xs text-gray-400">Download started automatically.</p>
               </div>
             </motion.div>
           )}
