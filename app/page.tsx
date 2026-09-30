@@ -182,24 +182,28 @@ export default function LandingPage() {
             </motion.div>
           ) : (
             <motion.div
-              initial={{opacity: 0, scale: 0.9}}
+              initial={{opacity: 0, scale: 0.95}}
               animate={{opacity: 1, scale: 1}}
-              className="text-center p-12 bg-[#004d40]/5 rounded-2xl border-2 border-dashed border-[#004d40]/20"
+              className="text-center p-8 md:p-12 bg-white rounded-2xl border-2 border-[#004d40] shadow-2xl relative overflow-hidden"
             >
-              <div className="w-20 h-20 bg-[#004d40] rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+              <div className="absolute top-0 left-0 w-full h-2 bg-[#004d40]"></div>
+              <div className="w-20 h-20 bg-[#004d40] rounded-full flex items-center justify-center mx-auto mb-6 text-white shadow-lg">
                 <CheckCircle2 size={40} />
               </div>
-              <h2 className="text-3xl font-bold mb-4">You're All Set!</h2>
-              <p className="text-[#004d40]/70 mb-8">
-                Thank you for your interest. You can now download your free ebook below.
+              <h2 className="text-3xl font-bold mb-4 text-[#004d40]">Lead Captured!</h2>
+              <p className="text-gray-600 mb-8 text-lg">
+                Your growth guide is ready. Click below to start your download instantly.
               </p>
-              <a
-                href="/real-estate-growth-ebook.pdf"
-                download
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#004d40] text-white rounded-xl font-bold hover:bg-[#00695c] transition-colors"
-              >
-                <Download size={24} /> Download Ebook PDF
-              </a>
+              <div className="flex flex-col gap-4">
+                <a
+                  href="/real-estate-growth-ebook.pdf"
+                  download="Real_Estate_Growth_Guide.pdf"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#004d40] text-white rounded-xl font-bold text-xl hover:bg-[#00695c] active:scale-[0.98] transition-all shadow-xl"
+                >
+                  <Download size={28} /> DOWNLOAD PDF NOW
+                </a>
+                <p className="text-xs text-gray-400">Download starts immediately in 1 second.</p>
+              </div>
             </motion.div>
           )}
         </div>

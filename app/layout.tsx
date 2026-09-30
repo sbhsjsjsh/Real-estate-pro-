@@ -2,17 +2,17 @@ import type {Metadata} from 'next';
 import './globals.css'; // Global styles
 
 export const metadata: Metadata = {
-  title: 'My Google AI Studio App',
-  description: 'An application built with Google AI Studio.',
+  title: 'Free Real Estate Business Growth Ebook',
+  description: 'Download the ultimate growth guide for Realtors. Scale your business, build trust, and generate premium leads instantly.',
   openGraph: {
-    title: 'My Google AI Studio App',
-    description: 'An application built with Google AI Studio.',
+    title: 'Free Real Estate Business Growth Ebook',
+    description: 'Download the ultimate growth guide for Realtors. Scale your business, build trust, and generate premium leads instantly.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'My Google AI Studio App',
-    description: 'An application built with Google AI Studio.',
+    title: 'Free Real Estate Business Growth Ebook',
+    description: 'Download the ultimate growth guide for Realtors. Scale your business, build trust, and generate premium leads instantly.',
   },
 };
 
